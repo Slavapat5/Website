@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeSupplies>
+    <Product code="001-01">
+        <Name>Laptop</Name>
+        <Description>High-performance laptop with 16GB RAM, 512GB SSD.</Description>
+        <Quantity>15</Quantity>
+        <UnitPrice>1200.00</UnitPrice>
+    </Product>
+    <Product code="002-01">
+        <Name>Projector</Name>
+        <Description>Portable LED projector, 1080p resolution, HDMI and USB ports.</Description>
+        <Quantity>10</Quantity>
+        <UnitPrice>250.00</UnitPrice>
+    </Product>
+    <Product code="003-01">
+        <Name>Ballpoint Pens</Name>
+        <Description>Ergonomic pens, pack of 20, assorted colors.</Description>
+        <Quantity>100</Quantity>
+        <UnitPrice>5.00</UnitPrice>
+    </Product>
+    <Product code="004-01">
+        <Name>Printer Paper</Name>
+        <Description>Multipurpose paper, 5000 sheets, 80gsm.</Description>
+        <Quantity>50</Quantity>
+        <UnitPrice>25.00</UnitPrice>
+    </Product>
+    <Product code="005-01">
+        <Name>Notebooks</Name>
+        <Description>Spiral-bound, 100 ruled pages, pack of 5.</Description>
+        <Quantity>200</Quantity>
+        <UnitPrice>10.00</UnitPrice>
+    </Product>
+    <Product code="006-01">
+        <Name>Staplers</Name>
+        <Description>Heavy-duty stapler, 50 sheet capacity.</Description>
+        <Quantity>30</Quantity>
+        <UnitPrice>12.00</UnitPrice>
+    </Product>
+    <Product code="007-01">
+        <Name>Laser Printers</Name>
+        <Description>Monochrome laser printer, 20 ppm, wireless.</Description>
+        <Quantity>15</Quantity>
+        <UnitPrice>100.00</UnitPrice>
+    </Product>
+    <Product code="008-01">
+        <Name>Ergonomic Office Chairs</Name>
+        <Description>Adjustable chair with lumbar support, mesh back.</Description>
+        <Quantity>20</Quantity>
+        <UnitPrice>150.00</UnitPrice>
+    </Product>
+    <Product code="009-01">
+        <Name>Whiteboards</Name>
+        <Description>Magnetic dry-erase board, 4x3 ft.</Description>
+        <Quantity>25</Quantity>
+        <UnitPrice>30.00</UnitPrice>
+    </Product>
+    <Product code="010-01">
+        <Name>Filing Cabinets</Name>
+        <Description>Metal filing cabinet, 4 drawers with lock.</Description>
+        <Quantity>10</Quantity>
+        <UnitPrice>200.00</UnitPrice>
+    </Product>
+</OfficeSupplies>
