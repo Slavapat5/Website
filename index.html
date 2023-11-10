@@ -4,29 +4,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Office Supplies Inventory</title>
-<link rel="stylesheet" href="style.css">
+<style>
+ /* Basic reset for padding and margin */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Basic styling */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+  }
+
+  /* Header and navigation styles */
+  header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    background: #444;
+    padding: 10px 0;
+  }
+
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+  }
+
+  /* Responsive navigation menu */
+  @media (max-width: 600px) {
+    nav {
+      flex-direction: column;
+    }
+    nav a {
+      text-align: center;
+      padding: 10px;
+      border-top: 1px solid #555;
+      width: 100%;
+    }
+  }
+
+  /* Main content styles */
+  .container {
+    padding: 20px;
+  }
+
+  /* Footer styles */
+  footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }</style>
 </head>
 <body>
-    <div id="wrapper">
-        <header>
-        <h1>Office Supplies Inventory</h1>
-        </header>
 
-        <nav>
-        <a href="#home">Home</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
-        </nav>
+<header>
+  <h1>Office Supplies Inventory</h1>
+</header>
 
-        <div class="container">
-        <h2>Welcome to Our Inventory</h2>
-        <p>This is a basic layout for an office supplies inventory application. Please navigate through the menu to find what you need.</p>
-        </div>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#products">Products</a>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+</nav>
 
-        <footer>
-        <p>&copy; 2023 Digital Agency</p>
-        </footer>
-    </div>
+<div class="container">
+  <input type="text" id="searchBox" placeholder="Search products..." onkeyup="searchProducts()">
+  <div id="searchResults"></div>
+</div>
+
+<footer>
+  <p>&copy; 2023 Digital Agency</p>
+</footer>
+
+<script>
+// Function to search products
+function searchProducts() {
+  var input, filter, xmlDoc, products, i, txtValue, div, name;
+  input = document.getElementById("searchBox");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("searchResults");
+  div.innerHTML = "";
+
+  // Assuming the XML file is on the server and accessible via this path
+  const request = new XMLHttpRequest();
+  request.open("GET", "OfficeSuppliesInventory.xml", true);
+  request.send();
+  request.onload = function() {
+    const parser = new DOMParser();
+    xmlDoc = parser.parseFromString(request.responseText, "text/xml");
+    products = xmlDoc.getElementsByTagName("Product");
+
+    for (i = 0; i < products.length; i++) {
+      name = products[i].getElementsByTagName("Name")[0].textContent;
+      if (name.toUpperCase().indexOf(filter) > -1) {
+        div.innerHTML += "<p><strong>" + name + "</strong></p>";
+      }
+    }
+  }
+}
+</script>
+
 </body>
 </html>
